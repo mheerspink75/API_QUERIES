@@ -1,4 +1,4 @@
-import urllib.request
+import pandas as pd
 from API_KEYS import ALPHAVANTAGE_API_KEY
 
 API_KEY = 'ALPHAVANTAGE_API_KEY'
@@ -17,8 +17,7 @@ def get_intraday_time_series(symbol):
         ('&symbol=' + symbol) + ('&interval=' + intraday_interval) + \
         ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
 
-    INTRADAY_TIME_SERIES = urllib.request.urlopen(
-        INTRADAY_OHLC).read().decode()
+    INTRADAY_TIME_SERIES = pd.read_csv(INTRADAY_OHLC)
     return INTRADAY_TIME_SERIES
 
 
@@ -30,7 +29,7 @@ def get_daily_time_series(symbol):
     DAILY_OHLC = ('https://www.alphavantage.co/query?') + ('function=' + daily) + \
         ('&symbol=' + symbol) + ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
 
-    DAILY_TIME_SERIES = urllib.request.urlopen(DAILY_OHLC).read().decode()
+    DAILY_TIME_SERIES = pd.read_csv(DAILY_OHLC)
     return DAILY_TIME_SERIES
 
 
@@ -42,7 +41,7 @@ def get_weekly_time_series(symbol):
     WEEKLY_OHLC = ('https://www.alphavantage.co/query?') + ('function=' + weekly) + \
         ('&symbol=' + symbol) + ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
 
-    WEEKLY_TIME_SERIES = urllib.request.urlopen(WEEKLY_OHLC).read().decode()
+    WEEKLY_TIME_SERIES = pd.read_csv(WEEKLY_OHLC)
     return WEEKLY_TIME_SERIES
 
 
@@ -54,7 +53,7 @@ def get_monthly_time_series(symbol):
     MONTHLY_OHLC = ('https://www.alphavantage.co/query?') + ('function=' + monthly) + \
         ('&symbol=' + symbol) + ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
 
-    MONTHLY_TIME_SERIES = urllib.request.urlopen(MONTHLY_OHLC).read().decode()
+    MONTHLY_TIME_SERIES = pd.read_csv(MONTHLY_OHLC)
     return MONTHLY_TIME_SERIES
 
     
