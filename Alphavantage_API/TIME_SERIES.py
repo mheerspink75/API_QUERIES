@@ -56,7 +56,7 @@ def get_monthly_time_series(symbol):
     MONTHLY_TIME_SERIES = pd.read_csv(MONTHLY_OHLC)
     return MONTHLY_TIME_SERIES
 
-    
+
 ############################################
 ## print(get_intraday_time_series(symbol))##
 ## print(get_daily_time_series(symbol))#####

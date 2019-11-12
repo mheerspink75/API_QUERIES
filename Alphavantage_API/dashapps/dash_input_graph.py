@@ -36,28 +36,29 @@ app.layout = html.Div(children=[
     ),
     [
         Input(
-        component_id='input',
-        component_property='value'
-    )]
+            component_id='input',
+            component_property='value'
+        )]
 )
-
 def update_value(input_data):
     daily = 'TIME_SERIES_DAILY'
     datatype = 'csv'  # ['json', 'csv']
-    DAILY_OHLC = ('https://www.alphavantage.co/query?') + ('function=' + daily) + ('&symbol=' + input_data) + ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
+    DAILY_OHLC = ('https://www.alphavantage.co/query?') + ('function=' + daily) + \
+        ('&symbol=' + input_data) + \
+        ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
     df = pd.read_csv(DAILY_OHLC)
 
     return dcc.Graph(
-        id='graph', 
+        id='graph',
         figure={
             'data': [
                 {
-                    'x': df.timestamp, 
-                    'open': df.open, 
-                    'high': df.high, 
-                    'low': df.low, 
-                    'close': df.close, 
-                    'type': 'ohlc', 
+                    'x': df.timestamp,
+                    'open': df.open,
+                    'high': df.high,
+                    'low': df.low,
+                    'close': df.close,
+                    'type': 'ohlc',
                     'name': 'chart'},
             ],
             'layout': {
