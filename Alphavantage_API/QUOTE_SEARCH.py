@@ -11,7 +11,7 @@ symbol = input('Enter a stock symbol: ')
 
 
 def get_quote():
-    #print('Currently pulling: ', symbol)
+    print('Currently pulling: ', symbol)
     QUOTE_SEARCH = web.get_quote_av(symbol, api_key=(API_KEY))
     return QUOTE_SEARCH
 
