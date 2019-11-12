@@ -131,3 +131,4 @@ dmypy.json
 API_KEYS.py
 viz_env/*
 .vscode/*
+Bittrex_API/*
