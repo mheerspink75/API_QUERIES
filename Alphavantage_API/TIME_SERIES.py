@@ -59,7 +59,7 @@ def get_monthly_time_series(symbol):
 
     
 ############################################
-##print(get_intraday_time_series(symbol))##
+## print(get_intraday_time_series(symbol))##
 ## print(get_daily_time_series(symbol))#####
 ## print(get_weekly_time_series(symbol))####
 ## print(get_monthly_time_series(symbol))###
