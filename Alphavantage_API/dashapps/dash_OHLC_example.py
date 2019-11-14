@@ -11,16 +11,14 @@ app = dash.Dash(__name__)
 API_KEY = 'ALPHAVANTAGE_API_KEY'
 
 symbol = 'AAPL'
-##### TIME_SERIES_DAILY #####
-
 daily = 'TIME_SERIES_DAILY'
 datatype = 'csv'  # ['json', 'csv']
 
+##### TIME_SERIES_DAILY #####
 DAILY_OHLC = ('https://www.alphavantage.co/query?') + ('function=' + daily) + \
     ('&symbol=' + symbol) + ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
 df = pd.read_csv(DAILY_OHLC)
 # print(df)
-
 
 app.layout = html.Div(
     dcc.Graph(
