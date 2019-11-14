@@ -13,7 +13,7 @@ API_KEY = 'ALPHAVANTAGE_API_KEY'
 
 
 #############################
-#symbol = 'AAPL'#############
+#symbol = 'AAPL' ############
 ##### TIME_SERIES_DAILY #####
 #############################
 
@@ -40,6 +40,7 @@ app.layout = html.Div(children=[
             component_property='value'
         )]
 )
+
 def update_value(input_data):
     daily = 'TIME_SERIES_DAILY'
     datatype = 'csv'  # ['json', 'csv']
