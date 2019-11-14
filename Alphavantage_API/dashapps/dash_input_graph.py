@@ -1,19 +1,20 @@
+import pandas as pd
+import urllib.request
 from pandas_datareader import data
 import datetime
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-import pandas as pd
-import urllib.request
 from API_KEYS import ALPHAVANTAGE_API_KEY
 
 API_KEY = 'ALPHAVANTAGE_API_KEY'
 
 
 #############################
-#symbol = 'AAPL' ############
+##### symbol = 'AAPL' #######
 ##### TIME_SERIES_DAILY #####
 #############################
 
@@ -39,7 +40,7 @@ app.layout = html.Div(children=[
             component_id='input',
             component_property='value'
         )]
-)
+     )
 
 def update_value(input_data):
     daily = 'TIME_SERIES_DAILY'
