@@ -9,12 +9,14 @@ from API_KEYS import ALPHAVANTAGE_API_KEY
 API_KEY = 'ALPHAVANTAGE_API_KEY'
 
 symbol = 'AAPL'
+datatype = 'csv'  # ['json', 'csv']
+daily = 'TIME_SERIES_DAILY'
+
 ##### TIME_SERIES_DAILY #####
 
-daily = 'TIME_SERIES_DAILY'
-datatype = 'csv'  # ['json', 'csv']
 DAILY_OHLC = ('https://www.alphavantage.co/query?') + ('function=' + daily) + \
     ('&symbol=' + symbol) + ('&apikey=' + API_KEY) + ('&datatype=' + datatype)
+
 df = pd.read_csv(DAILY_OHLC)
 
 print(df)
